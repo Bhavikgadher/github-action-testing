@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bhavik Gadher | Portfolio</title>
+
+<title>Bhavik Gadher | Full Stack Developer</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
@@ -18,9 +20,16 @@ scroll-behavior:smooth;
 }
 
 body{
-min-height:100vh;
-background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+background:linear-gradient(-45deg,#0f2027,#203a43,#2c5364,#1c1c1c);
+background-size:400% 400%;
+animation:gradient 12s ease infinite;
 color:white;
+}
+
+@keyframes gradient{
+0%{background-position:0% 50%}
+50%{background-position:100% 50%}
+100%{background-position:0% 50%}
 }
 
 /* Navbar */
@@ -42,24 +51,23 @@ z-index:100;
 
 header h1{
 font-size:24px;
-letter-spacing:1px;
 }
 
 nav a{
-color:white;
 margin-left:25px;
+color:white;
 text-decoration:none;
 position:relative;
 }
 
 nav a::after{
 content:"";
+position:absolute;
 width:0%;
 height:2px;
 background:#00e5ff;
-position:absolute;
 left:0;
-bottom:-4px;
+bottom:-5px;
 transition:.3s;
 }
 
@@ -83,17 +91,16 @@ justify-content:space-between;
 flex-wrap:wrap;
 }
 
-.hero-text h2{
-font-size:50px;
-margin-bottom:10px;
+.hero h2{
+font-size:52px;
 }
 
-.hero-text span{
+.hero span{
 color:#00e5ff;
 }
 
-.hero-text p{
-margin-top:10px;
+.hero p{
+margin-top:15px;
 max-width:500px;
 line-height:1.7;
 }
@@ -102,49 +109,66 @@ line-height:1.7;
 
 .glass{
 background:rgba(255,255,255,0.1);
-border-radius:15px;
+border-radius:20px;
 padding:30px;
+
 backdrop-filter:blur(15px);
 border:1px solid rgba(255,255,255,0.2);
-box-shadow:0 8px 32px rgba(0,0,0,0.2);
+
 transition:0.4s;
 }
 
 .glass:hover{
-transform:translateY(-10px) scale(1.02);
+transform:translateY(-12px);
 box-shadow:0 20px 40px rgba(0,0,0,0.3);
 }
 
-/* About */
+/* Skills */
 
-.about{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:40px;
+.skills{
+margin-top:30px;
+}
+
+.skill{
+margin-bottom:20px;
+}
+
+.skill p{
+margin-bottom:5px;
+}
+
+.bar{
+height:10px;
+background:rgba(255,255,255,0.2);
+border-radius:10px;
+overflow:hidden;
+}
+
+.bar span{
+display:block;
+height:100%;
+background:#00e5ff;
 }
 
 /* Projects */
 
 .projects{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:30px;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+margin-top:40px;
 }
 
-/* Skills */
+/* Timeline */
 
-.skills{
-display:flex;
-flex-wrap:wrap;
-gap:10px;
-margin-top:15px;
+.timeline{
+margin-top:40px;
+border-left:2px solid #00e5ff;
+padding-left:20px;
 }
 
-.skill{
-padding:8px 15px;
-border-radius:20px;
-background:rgba(255,255,255,0.15);
-font-size:14px;
+.timeline-item{
+margin-bottom:25px;
 }
 
 /* Contact */
@@ -156,13 +180,13 @@ text-align:center;
 .contact a{
 display:inline-block;
 margin-top:20px;
-padding:12px 25px;
-border-radius:30px;
+padding:12px 30px;
 background:#00e5ff;
 color:black;
-font-weight:600;
+border-radius:25px;
 text-decoration:none;
-transition:0.3s;
+font-weight:600;
+transition:.3s;
 }
 
 .contact a:hover{
@@ -175,7 +199,6 @@ footer{
 text-align:center;
 padding:20px;
 background:rgba(255,255,255,0.08);
-backdrop-filter:blur(10px);
 }
 
 /* Responsive */
@@ -187,27 +210,27 @@ flex-direction:column;
 text-align:center;
 }
 
-.about{
-grid-template-columns:1fr;
-}
-
 header{
-padding:15px 20px;
+padding:20px;
 }
 
 }
 
 </style>
+
 </head>
 
 <body>
+
 
 <header>
 <h1>Bhavik Gadher</h1>
 
 <nav>
 <a href="#about">About</a>
+<a href="#skills">Skills</a>
 <a href="#projects">Projects</a>
+<a href="#timeline">Journey</a>
 <a href="#contact">Contact</a>
 </nav>
 </header>
@@ -215,23 +238,13 @@ padding:15px 20px;
 
 <section class="hero">
 
-<div class="hero-text">
-<h2>Hello, I'm <span>Bhavik</span></h2>
+<div>
+<h2>Hello I'm <span>Bhavik</span></h2>
 
 <p>
-Full-Stack Developer & DevOps Learner passionate about building scalable web applications, 
-modern UI systems, and backend architectures. I work with Flutter, MERN stack, and cloud tools.
+Full Stack Developer passionate about building scalable applications,
+system architecture, and DevOps automation.
 </p>
-
-<div class="skills">
-<div class="skill">Flutter</div>
-<div class="skill">Node.js</div>
-<div class="skill">React</div>
-<div class="skill">MongoDB</div>
-<div class="skill">Docker</div>
-<div class="skill">Linux</div>
-<div class="skill">DevOps</div>
-</div>
 
 </div>
 
@@ -240,36 +253,60 @@ modern UI systems, and backend architectures. I work with Flutter, MERN stack, a
 
 <section id="about">
 
-<div class="about">
-
 <div class="glass">
+
 <h2>About Me</h2>
 
 <p>
-I'm a developer focused on building modern applications using 
-Flutter, MERN stack, and DevOps tools. I enjoy designing scalable 
-systems and building real-world projects that solve meaningful problems.
+I'm a developer with experience in Flutter, MERN stack, backend APIs,
+and Linux environments. I enjoy building complex systems and learning
+DevOps tools like Docker and cloud infrastructure.
 </p>
 
 <p>
-Currently learning cloud infrastructure, Docker, CI/CD pipelines, and system architecture.
+My goal is to become a professional full-stack + DevOps engineer capable
+of designing large-scale platforms.
 </p>
 
 </div>
 
-<div class="glass">
-<h2>Goals</h2>
+</section>
 
-<p>
-My goal is to become a strong Full-Stack + DevOps engineer capable of designing 
-large scale systems and microservices.
-</p>
 
-<p>
-I enjoy building complex projects like management systems, automation tools, 
-and platform-level applications.
-</p>
+<section id="skills">
 
+<h2>Skills</h2>
+
+<div class="skills">
+
+<div class="skill">
+<p>Flutter</p>
+<div class="bar"><span style="width:80%"></span></div>
+</div>
+
+<div class="skill">
+<p>Node.js</p>
+<div class="bar"><span style="width:75%"></span></div>
+</div>
+
+<div class="skill">
+<p>React</p>
+<div class="bar"><span style="width:70%"></span></div>
+</div>
+
+<div class="skill">
+<p>MongoDB</p>
+<div class="bar"><span style="width:70%"></span></div>
+</div>
+
+<div class="skill">
+<p>Linux</p>
+<div class="bar"><span style="width:80%"></span></div>
+</div>
+
+<div class="skill">
+<p>Docker / DevOps</p>
+<div class="bar"><span style="width:60%"></span></div>
 </div>
 
 </div>
@@ -279,39 +316,62 @@ and platform-level applications.
 
 <section id="projects">
 
-<h2 style="margin-bottom:40px;">Projects</h2>
+<h2>Projects</h2>
 
 <div class="projects">
 
 <div class="glass">
 <h3>Furniture Customizer</h3>
 <p>
-A large scale MERN project allowing users to design and customize furniture 
-in real time with dynamic pricing and order management.
+Large MERN platform for customizing furniture with dynamic pricing.
 </p>
 </div>
 
 <div class="glass">
 <h3>Food Waste Reducer</h3>
 <p>
-A platform connecting restaurants and NGOs to reduce food waste by distributing 
-surplus food efficiently.
+Platform connecting restaurants and NGOs to reduce food waste.
 </p>
 </div>
 
 <div class="glass">
 <h3>Flutter Quiz App</h3>
 <p>
-A mobile quiz application with shuffled questions, answer tracking, and 
-result analytics.
+Mobile quiz app with question shuffle and result tracking.
 </p>
 </div>
 
 <div class="glass">
 <h3>Library Catalog API</h3>
 <p>
-Backend system for managing books, users, and lending operations with CRUD APIs.
+REST API backend for book catalog and lending management.
 </p>
+</div>
+
+</div>
+
+</section>
+
+
+<section id="timeline">
+
+<h2>Learning Journey</h2>
+
+<div class="timeline">
+
+<div class="timeline-item">
+<h3>Flutter Development</h3>
+<p>Built mobile apps with custom widgets and UI components.</p>
+</div>
+
+<div class="timeline-item">
+<h3>MERN Stack</h3>
+<p>Developed backend APIs and web applications.</p>
+</div>
+
+<div class="timeline-item">
+<h3>DevOps Learning</h3>
+<p>Working with Docker, Linux automation, and CI/CD tools.</p>
 </div>
 
 </div>
@@ -323,9 +383,9 @@ Backend system for managing books, users, and lending operations with CRUD APIs.
 
 <div class="glass contact">
 
-<h2>Contact Me</h2>
+<h2>Contact</h2>
 
-<p>Interested in collaborating or building something amazing together?</p>
+<p>If you'd like to collaborate or build something together.</p>
 
 <a href="#">Email Me</a>
 
@@ -335,9 +395,8 @@ Backend system for managing books, users, and lending operations with CRUD APIs.
 
 
 <footer>
-© 2026 Bhavik Gadher | Portfolio
+© 2026 Bhavik Gadher
 </footer>
-
 
 </body>
 </html>
