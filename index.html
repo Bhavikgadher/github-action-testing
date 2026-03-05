@@ -5,11 +5,25 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Bhavik Gadher | Full Stack Developer</title>
+<title>Bhavik Gadher | Developer Portfolio</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Fira+Code&display=swap" rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
 
 <style>
+
+:root{
+--bg:#0f2027;
+--text:white;
+--card:rgba(255,255,255,0.1);
+}
+
+body.light{
+--bg:#f5f5f5;
+--text:#111;
+--card:rgba(255,255,255,0.6);
+}
 
 *{
 margin:0;
@@ -20,158 +34,117 @@ scroll-behavior:smooth;
 }
 
 body{
-background:linear-gradient(-45deg,#0f2027,#203a43,#2c5364,#1c1c1c);
-background-size:400% 400%;
-animation:gradient 12s ease infinite;
-color:white;
+background:var(--bg);
+color:var(--text);
+min-height:100vh;
 }
 
-@keyframes gradient{
-0%{background-position:0% 50%}
-50%{background-position:100% 50%}
-100%{background-position:0% 50%}
+/* particles */
+
+#particles-js{
+position:fixed;
+width:100%;
+height:100%;
+z-index:-1;
 }
 
 /* Navbar */
 
 header{
-position:fixed;
-top:0;
-width:100%;
 display:flex;
 justify-content:space-between;
 align-items:center;
 padding:20px 60px;
 
-background:rgba(255,255,255,0.1);
+background:rgba(0,0,0,0.3);
 backdrop-filter:blur(10px);
-border-bottom:1px solid rgba(255,255,255,0.2);
-z-index:100;
-}
-
-header h1{
-font-size:24px;
 }
 
 nav a{
-margin-left:25px;
-color:white;
+margin-left:20px;
+color:var(--text);
 text-decoration:none;
-position:relative;
 }
 
-nav a::after{
-content:"";
-position:absolute;
-width:0%;
-height:2px;
+.toggle{
+cursor:pointer;
+padding:6px 12px;
+border-radius:10px;
 background:#00e5ff;
-left:0;
-bottom:-5px;
-transition:.3s;
+color:black;
 }
 
-nav a:hover::after{
-width:100%;
-}
-
-/* Sections */
-
-section{
-padding:120px 10%;
-min-height:100vh;
-}
-
-/* Hero */
+/* Hero Terminal */
 
 .hero{
-display:flex;
-align-items:center;
-justify-content:space-between;
-flex-wrap:wrap;
+padding:100px 10%;
 }
 
-.hero h2{
-font-size:52px;
-}
-
-.hero span{
-color:#00e5ff;
-}
-
-.hero p{
-margin-top:15px;
-max-width:500px;
-line-height:1.7;
-}
-
-/* Glass Card */
-
-.glass{
-background:rgba(255,255,255,0.1);
-border-radius:20px;
+.terminal{
+background:#111;
+color:#00ff90;
 padding:30px;
-
-backdrop-filter:blur(15px);
-border:1px solid rgba(255,255,255,0.2);
-
-transition:0.4s;
-}
-
-.glass:hover{
-transform:translateY(-12px);
-box-shadow:0 20px 40px rgba(0,0,0,0.3);
-}
-
-/* Skills */
-
-.skills{
-margin-top:30px;
-}
-
-.skill{
-margin-bottom:20px;
-}
-
-.skill p{
-margin-bottom:5px;
-}
-
-.bar{
-height:10px;
-background:rgba(255,255,255,0.2);
 border-radius:10px;
-overflow:hidden;
+font-family:'Fira Code', monospace;
+max-width:700px;
 }
 
-.bar span{
-display:block;
-height:100%;
-background:#00e5ff;
+.cursor{
+display:inline-block;
+width:8px;
+background:#00ff90;
+animation:blink 1s infinite;
 }
 
-/* Projects */
+@keyframes blink{
+0%{opacity:1}
+50%{opacity:0}
+100%{opacity:1}
+}
+
+/* Section */
+
+section{
+padding:80px 10%;
+}
+
+/* 3D cards */
 
 .projects{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:25px;
-margin-top:40px;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
 }
 
-/* Timeline */
-
-.timeline{
-margin-top:40px;
-border-left:2px solid #00e5ff;
-padding-left:20px;
+.card{
+background:var(--card);
+backdrop-filter:blur(10px);
+padding:25px;
+border-radius:15px;
+transition:0.4s;
+transform-style:preserve-3d;
 }
 
-.timeline-item{
-margin-bottom:25px;
+.card:hover{
+transform:rotateY(10deg) rotateX(5deg) scale(1.05);
+box-shadow:0 20px 40px rgba(0,0,0,0.4);
 }
 
-/* Contact */
+/* skills */
+
+.skills{
+display:flex;
+flex-wrap:wrap;
+gap:10px;
+}
+
+.skill{
+padding:8px 15px;
+background:var(--card);
+border-radius:20px;
+}
+
+/* contact */
 
 .contact{
 text-align:center;
@@ -183,37 +156,14 @@ margin-top:20px;
 padding:12px 30px;
 background:#00e5ff;
 color:black;
-border-radius:25px;
+border-radius:30px;
 text-decoration:none;
-font-weight:600;
-transition:.3s;
 }
-
-.contact a:hover{
-transform:scale(1.1);
-}
-
-/* Footer */
 
 footer{
 text-align:center;
 padding:20px;
-background:rgba(255,255,255,0.08);
-}
-
-/* Responsive */
-
-@media(max-width:900px){
-
-.hero{
-flex-direction:column;
-text-align:center;
-}
-
-header{
-padding:20px;
-}
-
+margin-top:50px;
 }
 
 </style>
@@ -222,92 +172,28 @@ padding:20px;
 
 <body>
 
+<div id="particles-js"></div>
 
 <header>
-<h1>Bhavik Gadher</h1>
+
+<h2>Bhavik Gadher</h2>
 
 <nav>
-<a href="#about">About</a>
-<a href="#skills">Skills</a>
 <a href="#projects">Projects</a>
-<a href="#timeline">Journey</a>
+<a href="#skills">Skills</a>
 <a href="#contact">Contact</a>
+<span class="toggle" onclick="toggleTheme()">Theme</span>
 </nav>
-</header>
 
+</header>
 
 <section class="hero">
 
-<div>
-<h2>Hello I'm <span>Bhavik</span></h2>
+<div class="terminal">
 
-<p>
-Full Stack Developer passionate about building scalable applications,
-system architecture, and DevOps automation.
-</p>
-
-</div>
-
-</section>
-
-
-<section id="about">
-
-<div class="glass">
-
-<h2>About Me</h2>
-
-<p>
-I'm a developer with experience in Flutter, MERN stack, backend APIs,
-and Linux environments. I enjoy building complex systems and learning
-DevOps tools like Docker and cloud infrastructure.
-</p>
-
-<p>
-My goal is to become a professional full-stack + DevOps engineer capable
-of designing large-scale platforms.
-</p>
-
-</div>
-
-</section>
-
-
-<section id="skills">
-
-<h2>Skills</h2>
-
-<div class="skills">
-
-<div class="skill">
-<p>Flutter</p>
-<div class="bar"><span style="width:80%"></span></div>
-</div>
-
-<div class="skill">
-<p>Node.js</p>
-<div class="bar"><span style="width:75%"></span></div>
-</div>
-
-<div class="skill">
-<p>React</p>
-<div class="bar"><span style="width:70%"></span></div>
-</div>
-
-<div class="skill">
-<p>MongoDB</p>
-<div class="bar"><span style="width:70%"></span></div>
-</div>
-
-<div class="skill">
-<p>Linux</p>
-<div class="bar"><span style="width:80%"></span></div>
-</div>
-
-<div class="skill">
-<p>Docker / DevOps</p>
-<div class="bar"><span style="width:60%"></span></div>
-</div>
+<p>> Hello World 👋</p>
+<p>> I'm Bhavik Gadher</p>
+<p>> <span id="typing"></span><span class="cursor"></span></p>
 
 </div>
 
@@ -320,32 +206,24 @@ of designing large-scale platforms.
 
 <div class="projects">
 
-<div class="glass">
+<div class="card">
 <h3>Furniture Customizer</h3>
-<p>
-Large MERN platform for customizing furniture with dynamic pricing.
-</p>
+<p>MERN platform for designing custom furniture.</p>
 </div>
 
-<div class="glass">
+<div class="card">
 <h3>Food Waste Reducer</h3>
-<p>
-Platform connecting restaurants and NGOs to reduce food waste.
-</p>
+<p>System connecting restaurants with NGOs.</p>
 </div>
 
-<div class="glass">
+<div class="card">
 <h3>Flutter Quiz App</h3>
-<p>
-Mobile quiz app with question shuffle and result tracking.
-</p>
+<p>Quiz app with shuffled questions.</p>
 </div>
 
-<div class="glass">
+<div class="card">
 <h3>Library Catalog API</h3>
-<p>
-REST API backend for book catalog and lending management.
-</p>
+<p>Backend system for managing books.</p>
 </div>
 
 </div>
@@ -353,26 +231,19 @@ REST API backend for book catalog and lending management.
 </section>
 
 
-<section id="timeline">
+<section id="skills">
 
-<h2>Learning Journey</h2>
+<h2>Skills</h2>
 
-<div class="timeline">
+<div class="skills">
 
-<div class="timeline-item">
-<h3>Flutter Development</h3>
-<p>Built mobile apps with custom widgets and UI components.</p>
-</div>
-
-<div class="timeline-item">
-<h3>MERN Stack</h3>
-<p>Developed backend APIs and web applications.</p>
-</div>
-
-<div class="timeline-item">
-<h3>DevOps Learning</h3>
-<p>Working with Docker, Linux automation, and CI/CD tools.</p>
-</div>
+<div class="skill">Flutter</div>
+<div class="skill">React</div>
+<div class="skill">Node.js</div>
+<div class="skill">MongoDB</div>
+<div class="skill">Linux</div>
+<div class="skill">Docker</div>
+<div class="skill">DevOps</div>
 
 </div>
 
@@ -381,11 +252,11 @@ REST API backend for book catalog and lending management.
 
 <section id="contact">
 
-<div class="glass contact">
+<div class="contact">
 
 <h2>Contact</h2>
 
-<p>If you'd like to collaborate or build something together.</p>
+<p>Let's build something amazing together.</p>
 
 <a href="#">Email Me</a>
 
@@ -398,5 +269,82 @@ REST API backend for book catalog and lending management.
 © 2026 Bhavik Gadher
 </footer>
 
+
+<script>
+
+/* typing effect */
+
+const text = [
+"Full Stack Developer",
+"Flutter Developer",
+"MERN Stack Builder",
+"DevOps Learner"
+];
+
+let index=0;
+let char=0;
+
+function type(){
+
+if(char < text[index].length){
+
+document.getElementById("typing").textContent += text[index].charAt(char);
+char++;
+
+setTimeout(type,80);
+
+}else{
+
+setTimeout(()=>{
+document.getElementById("typing").textContent="";
+char=0;
+index=(index+1)%text.length;
+type();
+},1500)
+
+}
+
+}
+
+type();
+
+
+/* theme toggle */
+
+function toggleTheme(){
+document.body.classList.toggle("light");
+}
+
+
+/* particles */
+
+particlesJS("particles-js", {
+
+particles:{
+number:{value:80},
+
+color:{value:"#00e5ff"},
+
+shape:{type:"circle"},
+
+opacity:{value:0.5},
+
+size:{value:3},
+
+line_linked:{
+enable:true,
+distance:150,
+color:"#00e5ff",
+opacity:0.4
+},
+
+move:{enable:true,speed:2}
+}
+
+});
+
+</script>
+
 </body>
+
 </html>
