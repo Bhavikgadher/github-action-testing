@@ -1,45 +1,343 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Your Name | Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bhavik Gadher | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+min-height:100vh;
+background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+color:white;
+}
+
+/* Navbar */
+
+header{
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 60px;
+
+background:rgba(255,255,255,0.1);
+backdrop-filter:blur(10px);
+border-bottom:1px solid rgba(255,255,255,0.2);
+z-index:100;
+}
+
+header h1{
+font-size:24px;
+letter-spacing:1px;
+}
+
+nav a{
+color:white;
+margin-left:25px;
+text-decoration:none;
+position:relative;
+}
+
+nav a::after{
+content:"";
+width:0%;
+height:2px;
+background:#00e5ff;
+position:absolute;
+left:0;
+bottom:-4px;
+transition:.3s;
+}
+
+nav a:hover::after{
+width:100%;
+}
+
+/* Sections */
+
+section{
+padding:120px 10%;
+min-height:100vh;
+}
+
+/* Hero */
+
+.hero{
+display:flex;
+align-items:center;
+justify-content:space-between;
+flex-wrap:wrap;
+}
+
+.hero-text h2{
+font-size:50px;
+margin-bottom:10px;
+}
+
+.hero-text span{
+color:#00e5ff;
+}
+
+.hero-text p{
+margin-top:10px;
+max-width:500px;
+line-height:1.7;
+}
+
+/* Glass Card */
+
+.glass{
+background:rgba(255,255,255,0.1);
+border-radius:15px;
+padding:30px;
+backdrop-filter:blur(15px);
+border:1px solid rgba(255,255,255,0.2);
+box-shadow:0 8px 32px rgba(0,0,0,0.2);
+transition:0.4s;
+}
+
+.glass:hover{
+transform:translateY(-10px) scale(1.02);
+box-shadow:0 20px 40px rgba(0,0,0,0.3);
+}
+
+/* About */
+
+.about{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+}
+
+/* Projects */
+
+.projects{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+}
+
+/* Skills */
+
+.skills{
+display:flex;
+flex-wrap:wrap;
+gap:10px;
+margin-top:15px;
+}
+
+.skill{
+padding:8px 15px;
+border-radius:20px;
+background:rgba(255,255,255,0.15);
+font-size:14px;
+}
+
+/* Contact */
+
+.contact{
+text-align:center;
+}
+
+.contact a{
+display:inline-block;
+margin-top:20px;
+padding:12px 25px;
+border-radius:30px;
+background:#00e5ff;
+color:black;
+font-weight:600;
+text-decoration:none;
+transition:0.3s;
+}
+
+.contact a:hover{
+transform:scale(1.1);
+}
+
+/* Footer */
+
+footer{
+text-align:center;
+padding:20px;
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(10px);
+}
+
+/* Responsive */
+
+@media(max-width:900px){
+
+.hero{
+flex-direction:column;
+text-align:center;
+}
+
+.about{
+grid-template-columns:1fr;
+}
+
+header{
+padding:15px 20px;
+}
+
+}
+
+</style>
 </head>
-<body style="font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 20px;">
-    <!-- Navigation -->
-    <header style="text-align: center; background: #333; color: #fff; padding: 10px;">
-        <h1>Your Name</h1>
-        <nav>
-            <a href="#about" style="color: white; margin: 0 10px;">About</a> |
-            <a href="#projects" style="color: white; margin: 0 10px;">Projects</a> |
-            <a href="#contact" style="color: white; margin: 0 10px;">Contact</a>
-        </nav>
-    </header>
 
-    <!-- About Section -->
-    <section id="about" style="max-width: 800px; margin: 20px auto;">
-        <h2>About Me</h2>
-        <p>I am a web developer specializing in clean, semantic HTML. [W3Schools](https://www.w3schools.com/howto/howto_website_create_portfolio.asp) provides excellent guides on structuring these sections.</p>
-    </section>
+<body>
 
-    <!-- Projects Section -->
-    <section id="projects" style="max-width: 800px; margin: 20px auto;">
-        <h2>Projects</h2>
-        <table border="1" style="width: 100%; border-collapse: collapse;">
-            <tr>
-                <th style="padding: 10px;">Project Name</th>
-                <th style="padding: 10px;">Description</th>
-            </tr>
-            <tr>
-                <td style="padding: 10px;">E-commerce Storefront</td>
-                <td style="padding: 10px;">A responsive HTML layout for online shopping.</td>
-            </tr>
-        </table>
-    </section>
+<header>
+<h1>Bhavik Gadher</h1>
 
-    <!-- Contact Section -->
-    <section id="contact" style="max-width: 800px; margin: 20px auto; text-align: center;">
-        <h2>Contact Me</h2>
-        <p>Email: example@email.com</p>
-    </section>
+<nav>
+<a href="#about">About</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+
+
+<section class="hero">
+
+<div class="hero-text">
+<h2>Hello, I'm <span>Bhavik</span></h2>
+
+<p>
+Full-Stack Developer & DevOps Learner passionate about building scalable web applications, 
+modern UI systems, and backend architectures. I work with Flutter, MERN stack, and cloud tools.
+</p>
+
+<div class="skills">
+<div class="skill">Flutter</div>
+<div class="skill">Node.js</div>
+<div class="skill">React</div>
+<div class="skill">MongoDB</div>
+<div class="skill">Docker</div>
+<div class="skill">Linux</div>
+<div class="skill">DevOps</div>
+</div>
+
+</div>
+
+</section>
+
+
+<section id="about">
+
+<div class="about">
+
+<div class="glass">
+<h2>About Me</h2>
+
+<p>
+I'm a developer focused on building modern applications using 
+Flutter, MERN stack, and DevOps tools. I enjoy designing scalable 
+systems and building real-world projects that solve meaningful problems.
+</p>
+
+<p>
+Currently learning cloud infrastructure, Docker, CI/CD pipelines, and system architecture.
+</p>
+
+</div>
+
+<div class="glass">
+<h2>Goals</h2>
+
+<p>
+My goal is to become a strong Full-Stack + DevOps engineer capable of designing 
+large scale systems and microservices.
+</p>
+
+<p>
+I enjoy building complex projects like management systems, automation tools, 
+and platform-level applications.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="projects">
+
+<h2 style="margin-bottom:40px;">Projects</h2>
+
+<div class="projects">
+
+<div class="glass">
+<h3>Furniture Customizer</h3>
+<p>
+A large scale MERN project allowing users to design and customize furniture 
+in real time with dynamic pricing and order management.
+</p>
+</div>
+
+<div class="glass">
+<h3>Food Waste Reducer</h3>
+<p>
+A platform connecting restaurants and NGOs to reduce food waste by distributing 
+surplus food efficiently.
+</p>
+</div>
+
+<div class="glass">
+<h3>Flutter Quiz App</h3>
+<p>
+A mobile quiz application with shuffled questions, answer tracking, and 
+result analytics.
+</p>
+</div>
+
+<div class="glass">
+<h3>Library Catalog API</h3>
+<p>
+Backend system for managing books, users, and lending operations with CRUD APIs.
+</p>
+</div>
+
+</div>
+
+</section>
+
+
+<section id="contact">
+
+<div class="glass contact">
+
+<h2>Contact Me</h2>
+
+<p>Interested in collaborating or building something amazing together?</p>
+
+<a href="#">Email Me</a>
+
+</div>
+
+</section>
+
+
+<footer>
+© 2026 Bhavik Gadher | Portfolio
+</footer>
+
+
 </body>
 </html>
